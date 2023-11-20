@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->text('image_profile')->default('profile/default.png');
-            $table->integer('number_player');
+            $table->text('image_profile')->default('image_profile/default.jpg');
+            $table->integer('number_player')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('soccer_matches', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->date('dayOfMatch');
+            $table->dateTime('dayOfMatch');
             $table->foreignId('team_local_id')->constrained('teams');
             $table->foreignId('team_visit_id')->constrained('teams');
-            $table->foreignId('referee')->constrained('users');
+            $table->foreignId('referee_id')->constrained('users');
             $table->integer('team_local_goals')->default(0);
             $table->integer('team_visit_goals')->default(0);
             $table->integer('team_local_fouls')->default(0);
